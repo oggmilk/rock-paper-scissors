@@ -25,7 +25,7 @@ let computerScore = 0;
 
 function game(){
     for (let i =0; i < 5; i++){ 
-        let userEntry = prompt("r, p, or s?") //prompt and add variable for user entry
+        let userEntry = prompt("Rock, Paper, or Scissors?") //prompt and add variable for user entry
     
         let playerSelection = userEntry.toLowerCase().slice(0,1); //reformat user entry for code compatibility
     
