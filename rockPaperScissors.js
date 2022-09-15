@@ -19,6 +19,10 @@ function singleRound(playerSelection, computerSelection){
     }
 } //Establish win, lose, & tie conditions
 
+let userScore = 0;
+        
+let computerScore = 0;
+
 function game(){
     for (let i =0; i < 5; i++){ 
         let userEntry = prompt("r, p, or s?") //prompt and add variable for user entry
@@ -26,21 +30,19 @@ function game(){
         let playerSelection = userEntry.toLowerCase().slice(0,1); //reformat user entry for code compatibility
     
         let computerSelection = getComputerChoice();  
-    
-        console.log(singleRound(playerSelection, computerSelection));
-        
-
 
         if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
-            console.log("yoooooo")
+            computerScore++;
         }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
-            console.log("yooooo2o")
-        }else if(computerSelection == playerSelection){
-            console.log("yoo3oooo")
-        } 
-
+            userScore++;
+        } //adds points to scores after outcome
         
+        console.log(singleRound(playerSelection, computerSelection)); //displays round outcome
 
+        console.log("Your score:  ", userScore, "  Computer score:  ", computerScore); //displays score
 
     }
 }
+
+game(); //auto starts game
+
