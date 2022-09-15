@@ -19,7 +19,9 @@ function singleRound(playerSelection, computerSelection){
     }
 }
 
-let playerSelection = prompt("rock, paper, or scissors?")
+let userEntry = prompt("r, p, or s?")
+
+let playerSelection = userEntry.toLowerCase();
 
 let computerSelection = getComputerChoice();
 
