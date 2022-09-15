@@ -8,3 +8,16 @@ function getComputerChoice(){
         console.log("s")
     }
 }
+
+function singleRound(playerSelection, computerSelection){
+    if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
+        console.log("Lose");
+    }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
+        console.log("Win");
+    }else if(computerSelection == playerSelection){
+        console.log("Tie");
+    }
+
+
+
+}
