@@ -1,15 +1,16 @@
 function getComputerChoice(){
     let randomNum = Math.floor(Math.random()*3);
     if(randomNum == 0){
-        console.log("r");
+        return "r";
     }else if(randomNum == 1){
-        console.log("p");
+        return "p";
     }else if(randomNum == 2){
-        console.log("s")
+        return "s";
     }
 }
 
-function singleRound(playerSelection, computerSelection){
+function singleRound(playerSelection){
+    let computerSelection = getComputerChoice();
     if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
         console.log("Lose");
     }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
@@ -17,7 +18,4 @@ function singleRound(playerSelection, computerSelection){
     }else if(computerSelection == playerSelection){
         console.log("Tie");
     }
-
-
-
 }
