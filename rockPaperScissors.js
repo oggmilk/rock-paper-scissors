@@ -1,6 +1,6 @@
 function getComputerChoice(){
-    let randomNum = Math.floor(Math.random()*3); //Generates random number between 0 and 2
-    if(randomNum == 0){
+    let randomNum = Math.floor(Math.random()*3); //Generate random number between 0 and 2
+    if(randomNum == 0){ //assign game values based off these numbers
         return "r";
     }else if(randomNum == 1){
         return "p";
@@ -17,14 +17,30 @@ function singleRound(playerSelection, computerSelection){
     }else if(computerSelection == playerSelection){
         return "Tie";
     }
-} //Establishes up win, lose, & tie conditions
+} //Establish win, lose, & tie conditions
 
-for (let i =0; i < 5; i++){ 
-    let userEntry = prompt("r, p, or s?")
+function game(){
+    for (let i =0; i < 5; i++){ 
+        let userEntry = prompt("r, p, or s?") //prompt and add variable for user entry
+    
+        let playerSelection = userEntry.toLowerCase().slice(0,1); //reformat user entry for code compatibility
+    
+        let computerSelection = getComputerChoice();  
+    
+        console.log(singleRound(playerSelection, computerSelection));
+        
 
-    let playerSelection = userEntry.toLowerCase().slice(0,1);
 
-    let computerSelection = getComputerChoice();
+        if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
+            console.log("yoooooo")
+        }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
+            console.log("yooooo2o")
+        }else if(computerSelection == playerSelection){
+            console.log("yoo3oooo")
+        } 
 
-    console.log(singleRound(playerSelection, computerSelection));
+        
+
+
+    }
 }
