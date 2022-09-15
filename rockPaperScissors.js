@@ -22,7 +22,7 @@ function singleRound(playerSelection, computerSelection){
 for (let i =0; i < 5; i++){
     let userEntry = prompt("r, p, or s?")
 
-    let playerSelection = userEntry.toLowerCase();
+    let playerSelection = userEntry.toLowerCase().slice(0,1);
 
     let computerSelection = getComputerChoice();
 
