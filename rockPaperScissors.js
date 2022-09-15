@@ -9,13 +9,18 @@ function getComputerChoice(){
     }
 }
 
-function singleRound(playerSelection){
-    let computerSelection = getComputerChoice();
+function singleRound(playerSelection, computerSelection){
     if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
-        console.log("Lose");
+        return "Lose";
     }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
-        console.log("Win");
+        return "Win";
     }else if(computerSelection == playerSelection){
-        console.log("Tie");
+        return "Tie";
     }
 }
+
+let playerSelection = prompt("rock, paper, or scissors?")
+
+let computerSelection = getComputerChoice();
+
+console.log(singleRound(playerSelection, computerSelection));
