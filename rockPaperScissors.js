@@ -42,6 +42,16 @@ function game(){
         console.log("Your score:  ", userScore, "  Computer score:  ", computerScore); //displays score
 
     }
+
+    if(userScore>computerScore){
+        console.log("You won the game!");
+    }else if (userScore<computerScore){
+        console.log("You lost the game :(");
+    }else{
+        console.log("Tie Game: You are equally as smart as a computer nice!!!!")
+    }
+    // declares winner or loser or tie for the 5 rounds
+    
 }
 
 game(); //auto starts game
