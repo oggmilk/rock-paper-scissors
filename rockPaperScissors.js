@@ -1,5 +1,5 @@
 function getComputerChoice(){
-    let randomNum = Math.floor(Math.random()*3);
+    let randomNum = Math.floor(Math.random()*3); //Generates random number between 0 and 2
     if(randomNum == 0){
         return "r";
     }else if(randomNum == 1){
@@ -17,9 +17,9 @@ function singleRound(playerSelection, computerSelection){
     }else if(computerSelection == playerSelection){
         return "Tie";
     }
-}
+} //Establishes up win, lose, & tie conditions
 
-for (let i =0; i < 5; i++){
+for (let i =0; i < 5; i++){ 
     let userEntry = prompt("r, p, or s?")
 
     let playerSelection = userEntry.toLowerCase().slice(0,1);
