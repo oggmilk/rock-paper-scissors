@@ -26,3 +26,15 @@ let playerSelection = userEntry.toLowerCase();
 let computerSelection = getComputerChoice();
 
 console.log(singleRound(playerSelection, computerSelection));
+
+for (let i =0; i < 5; i++){
+    let userEntry = prompt("r, p, or s?")
+
+let playerSelection = userEntry.toLowerCase();
+
+let computerSelection = getComputerChoice();
+
+console.log(singleRound(playerSelection, computerSelection));
+    
+    
+}
