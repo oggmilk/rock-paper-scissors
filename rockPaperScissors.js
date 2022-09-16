@@ -19,11 +19,14 @@ function singleRound(playerSelection, computerSelection){
     }
 } //Establish win, lose, & tie conditions
 
-let userScore = 0;
-        
-let computerScore = 0;
+
 
 function game(){
+    let userScore = 0;
+        
+    let computerScore = 0;
+    
+    
     for (let i =0; i < 5; i++){ 
         let userEntry = prompt("Rock, Paper, or Scissors?") //prompt and add variable for user entry
     
@@ -52,6 +55,7 @@ function game(){
     }
     // declares winner or loser or tie for the 5 rounds
     
+
 }
 
 game(); //auto starts game
