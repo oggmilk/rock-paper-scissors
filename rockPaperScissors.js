@@ -19,44 +19,28 @@ function singleRound(playerSelection, computerSelection){
     }
 } //Establish win, lose, & tie conditions
 
-
-
 function game(){
-    let userScore = 0;
-        
+    let userScore = 0;   
     let computerScore = 0;
-    
-    
     for (let i =0; i < 5; i++){ 
         let userEntry = prompt("Rock, Paper, or Scissors?") //prompt and add variable for user entry
-    
         let playerSelection = userEntry.toLowerCase().slice(0,1); //reformat user entry for code compatibility
-    
         let computerSelection = getComputerChoice();  
-
         if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
             computerScore++;
         }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
             userScore++;
         } //adds points to scores after outcome
-        
         console.log(singleRound(playerSelection, computerSelection)); //displays round outcome
-
         console.log("Your score:  ", userScore, "  Computer score:  ", computerScore); //displays score
-
     }
-
     if(userScore>computerScore){
         console.log("You won the game!");
     }else if (userScore<computerScore){
         console.log("You lost the game :(");
     }else{
         console.log("Tie Game: You are equally as smart as a computer nice!!!!")
-    }
-    // declares winner or loser or tie for the 5 rounds
-    
-
+    }    // declares winner or loser or tie for the 5 rounds
 }
 
-game(); //auto starts game
-
+game(); //initializes game
