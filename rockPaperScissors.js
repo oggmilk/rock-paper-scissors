@@ -9,42 +9,60 @@ function getComputerChoice(){
     }
 }
 
-function singleRound(playerSelection){
-    computerSelection = "r"; ////makes comp selection rock right now for testing,, CHANGE BACK TO GET COMPCHOICE cuntion
-    if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
-        console.log("lose")
-    }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
-        console.log("win")
-    }else if(computerSelection == playerSelection){
-        console.log("tie")
+let playerScore = 0;
+let computerScore = 0;
+
+function game(playerSelection){
+    computerSelection = getComputerChoice();
+    if(playerScore == 5 || computerScore == 5){
+        
+        return;
+        
     }
+    if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
+        resultText.textContent = "You lose :(";
+        computerScore++;
+        console.log(score);
+    }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
+        resultText.textContent = "You win :)";
+        playerScore++;
+    }else if(computerSelection == playerSelection){
+        resultText.textContent = "You tie :|";
+    } 
+    playerScoreBoard.textContent = playerScore;
+    computerScoreBoard.textContent = computerScore;
+    if(playerScore == 5){
+        resultText.textContent = "You won!!!"
+    }else if(computerScore == 5){
+        resultText.textContent = "You lost!!!!"
+    }
+    
+    
 }
 
+const playerScoreBoard = document.querySelector("#playerScore");
 
+const computerScoreBoard = document.querySelector("#computerScore");
+
+const resultText = document.querySelector("#results");
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", function(){
-    singleRound("r")
+    game("r");
 });
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", function(){
-     singleRound("p")
+     game("p");
 });
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", function(){
-    singleRound("s")
+    game("s");
 });
 
-// let computerSelection = getComputerChoice();  
-// if(computerSelection == "r" && playerSelection == "s" || computerSelection == "p" && playerSelection == "r" || computerSelection == "s" && playerSelection == "p"){
-//     computerScore++;
-// }else if(computerSelection == "s" && playerSelection == "r" || computerSelection == "r" && playerSelection == "p" || computerSelection == "p" && playerSelection == "s"){
-//     playerScore++;
-// } //adds points to scores after outcome
-// console.log(singleRound(playerSelection, computerSelection)); //displays round outcome
-// console.log("Your score:  ", playerScore, "  Computer score:  ", computerScore); //displays score
+
+
 
 
 
