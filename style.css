@@ -79,6 +79,10 @@ button:hover {
     transform: scale(1.01);
 }
 
+button:active {
+    transform: translateY(5px);
+}
+
 
 #results, #score {
     display: flex;
